@@ -2,6 +2,7 @@
   "name": "modern-model-railways-controler",
   "productName": "Modern Model Railways Controler",
   "description": "Control application for model railways",
+  "authors": "Ricardo Peironcely",
   "version": "0.0.1",
   "main": "./electron/dist/main.js",
   "scripts": {
