@@ -55,7 +55,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "executableName": "mmrc"
+        "executableName": "modern-model-railways-controler"
       },
       "makers": [
         {
