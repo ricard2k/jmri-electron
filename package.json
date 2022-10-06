@@ -1,5 +1,5 @@
 {
-  "name": "modern-model-railways-controler",
+  "name": "mmrc",
   "productName": "Modern Model Railways Controler",
   "description": "Control application for model railways",
   "authors": "Ricardo Peironcely",
@@ -56,7 +56,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "executableName": "modern-model-railways-controler"
+        "executableName": "mmrc"
       },
       "makers": [
         {
@@ -81,7 +81,9 @@
           "name": "@electron-forge/maker-dmg",
           "config": {
             "_comment": "Path to the icon to use for the app in the DMG window",
-            "icon": "./electron/icons/icon.icns"
+            "icon": "./electron/icons/icon.icns",
+            "format": "ULFO",
+            "name": "mmrc"
           }
         }
       ],
@@ -91,7 +93,7 @@
           "config": {
             "repository": {
               "owner": "ricard2k",
-              "name": "modern-railway-model-control"
+              "name": "modern-model-railways-controler"
             },
             "prerelease": true
           }

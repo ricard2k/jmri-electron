@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "modern-railway-model-control": {
+    "modern-model-railways-controler": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/modern-railway-model-control",
+            "outputPath": "dist/modern-model-railways-controler",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "modern-railway-model-control:build:production"
+              "browserTarget": "modern-model-railways-controler:build:production"
             },
             "development": {
-              "browserTarget": "modern-railway-model-control:build:development"
+              "browserTarget": "modern-model-railways-controler:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "modern-railway-model-control:build"
+            "browserTarget": "modern-model-railways-controler:build"
           }
         },
         "test": {
@@ -109,5 +109,5 @@
       }
     }
   },
-  "defaultProject": "modern-railway-model-control"
+  "defaultProject": "modern-model-railways-controler"
 }

@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/modern-railway-model-control'),
+      dir: require('path').join(__dirname, './coverage/modern-model-railways-controler'),
       subdir: '.',
       reporters: [
         { type: 'html' },
