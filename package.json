@@ -85,6 +85,18 @@
             "format": "ULFO",
             "name": "mmrc"
           }
+        },
+        {
+          "name": "@electron-forge/maker-wix",
+          "config": {
+            "language": 1033,
+            "manufacturer": "Ricardo Peironcely",
+            "appUserModelId": "com.squirrel.mmrc.exe",
+            "exe": "mmrc",
+            "programFilesFolderName": "ModernModelRailwaysControler",
+            "shortcutFolderName": "Modern Model Railways Controler",
+            "name": "mmrc"
+          }
         }
       ],
       "publishers": [
@@ -95,7 +107,8 @@
               "owner": "ricard2k",
               "name": "modern-model-railways-controler"
             },
-            "prerelease": true
+            "prerelease": true,
+            "tagPrefix": "v"
           }
         }
       ]
