@@ -1,13 +1,17 @@
 {
   "name": "modern-railway-model-control",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "main": "./electron/dist/main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "electron": "ng build --base-href ./ && tsc --p electron && electron electron/dist/main.js"
+    "electron:start": "ng build --base-href ./ && tsc --p electron && electron ./electron/dist/main.js",
+    "electron:package": "electron-forge package",
+    "electron:make": "tsc --p electron && electron-forge make",
+    "electron:publish": "electron-forge publish"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +26,6 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "blockly": "^9.0.0",
-    "electron": "^21.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -31,8 +34,14 @@
     "@angular-devkit/build-angular": "~13.3.7",
     "@angular/cli": "~13.3.7",
     "@angular/compiler-cli": "~13.3.0",
+    "@electron-forge/cli": "^6.0.0-beta.67",
+    "@electron-forge/maker-deb": "^6.0.0-beta.67",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.67",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.67",
+    "@electron-forge/publisher-github": "^6.0.0-beta.67",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "electron": "^21.1.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -40,5 +49,48 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.6.2"
+  },
+  "config": {
+    "forge": {
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "_comment": "An URL to an ICO file to use as the application icon (displayed in Control Panel > Programs and Features).",
+            "iconUrl": "https://url/to/icon.ico",
+            "_comment1": "The ICO file to use as the icon for the generated Setup.exe",
+            "setupIcon": "./electron/icons/icon.ico"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "_comment": "Path to a single image that will act as icon for the application",
+              "icon": "./electron/icons/icon.png"
+            }
+          }
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "_comment": "Path to the icon to use for the app in the DMG window",
+            "icon": "./electron/icons/icon.icns"
+          }
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "ricard2k",
+              "name": "modern-railway-model-control"
+            },
+            "prerelease": true
+          }
+        }
+      ]
+    }
   }
 }

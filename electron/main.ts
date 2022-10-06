@@ -17,16 +17,12 @@ function createWindow() {
   );
 
   win.webContents.openDevTools();
-
-  win.on("closed", () => {
-    win.destroy();
-  });
 }
 
 app.on("ready", createWindow);
 
 app.on("activate", () => {
-  if (win === null) {
+  if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
 });
@@ -35,20 +31,21 @@ app.on("activate", () => {
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+  // if (process.platform !== 'darwin') {
+  //   app.quit()
+  // }
+  app.quit();
 });
 
 function getImages() {
   const cwd = process.cwd();
   fs.readdir('.', {withFileTypes: true}, (err, files) => {
       if (!err) {
-          const re = /(?:\.([^.]+))?$/;
-          const images = files
-            .filter(file => file.isFile() )//&& ['jpg', 'png'].includes(re.exec(file.name)[1]))
-            .map(file => `file://${cwd}/${file.name}`);
-          win.webContents.send("getImagesResponse", images);
+        const re = /(?:\.([^.]+))?$/;
+        const images = files
+          .filter(file => file.isFile() )//&& ['jpg', 'png'].includes(re.exec(file.name)[1]))
+          .map(file => `file://${cwd}/${file.name}`);
+        win.webContents.send("getImagesResponse", images);
       }
   });
 }
