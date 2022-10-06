@@ -1,0 +1,138 @@
+name: Build/release
+
+on: push
+
+jobs:
+  packageMac:
+    runs-on: macos-latest
+
+    environment: electron-forge
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install the Apple certificate and provisioning profile
+        env:
+          APPLE_NOTARIZE_KEY_CONTENT: ${{secrets.APPLE_NOTARIZE_KEY_CONTENT}}
+          APPLE_BUILD_CERTIFICATE_BASE64: ${{secrets.APPLE_BUILD_CERTIFICATE_BASE64}}
+          APPLE_BUILD_CERTIFICATE_PASSWORD: ${{secrets.APPLE_BUILD_CERTIFICATE_PASSWORD}}
+          KEYCHAIN_PASSWORD: ${{secrets.APPLE_BUILD_CERTIFICATE_PASSWORD}}
+        run: |
+          # create variables
+          NOTARIZE_CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          APPLE_NOTARIZE_KEY=$RUNNER_TEMP/notarize_certificate.p8
+
+          # import certificate and provisioning profile from secrets
+          echo -n "$APPLE_BUILD_CERTIFICATE_BASE64" | base64 --decode --output $NOTARIZE_CERTIFICATE_PATH
+          # echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
+          echo -n "$APPLE_NOTARIZE_KEY_CONTENT" > $APPLE_NOTARIZE_KEY
+
+          # create temporary keychain
+          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+
+          # import certificate to keychain
+          security import $NOTARIZE_CERTIFICATE_PATH -P "$APPLE_BUILD_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security list-keychain -d user -s $KEYCHAIN_PATH
+
+          # apply provisioning profile
+          # mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          # cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+
+      - name: Build angular frontend
+        run: npm run build
+
+      - name: Build electron typescript
+        run: npm run electron:buildts
+
+      - name: Publish electron
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          APPLE_NOTARIZE_KEY_ID: ${{secrets.APPLE_NOTARIZE_KEY_ID}}
+          APPLE_NOTARIZE_KEY_ISSUER: ${{secrets.APPLE_NOTARIZE_KEY_ISSUER}}
+          KEYCHAIN_PASSWORD: ${{secrets.APPLE_BUILD_CERTIFICATE_PASSWORD}}
+        run: |
+          export APPLE_NOTARIZE_KEY=$RUNNER_TEMP/notarize_certificate.p8
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          npm run electron:publish
+
+      - name: Clean up keychain and provisioning profile
+        if: ${{ always() }}
+        run: |
+          rm $RUNNER_TEMP/notarize_certificate.p8
+          rm $RUNNER_TEMP/build_certificate.p12
+          security delete-keychain $RUNNER_TEMP/app-signing.keychain-db
+          # rm ~/Library/MobileDevice/Provisioning\ Profiles/build_pp.mobileprovision
+
+  packageLinux:
+    runs-on: ubuntu-latest
+
+    environment: electron-forge
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build angular frontend
+        run: npm run build
+
+      - name: Build electron typescript
+        run: npm run electron:buildts
+
+      - name: Publish electron
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: npm run electron:publish
+
+  packageWindows:
+    runs-on: windows-latest
+
+    environment: electron-forge
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Check LongPathsEnabled
+        run: |
+          (Get-ItemProperty "HKLM:System\CurrentControlSet\Control\FileSystem").LongPathsEnabled
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build angular frontend
+        run: npm run build
+
+      - name: Build electron typescript
+        run: npm run electron:buildts
+
+      - name: Publish electron
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: npm run electron:publish
+  
