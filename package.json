@@ -9,9 +9,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "electron:start": "ng build --base-href ./ && tsc --p electron && electron ./electron/dist/main.js",
-    "electron:package": "electron-forge package",
-    "electron:make": "tsc --p electron && electron-forge make",
-    "electron:publish": "electron-forge publish"
+    "package": "electron-forge package",
+    "make": "tsc --p electron && electron-forge make",
+    "publish": "electron-forge publish"
   },
   "private": true,
   "dependencies": {
