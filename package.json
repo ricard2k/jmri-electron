@@ -12,8 +12,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "electron:start": "ng build --base-href ./ && tsc --p electron && electron ./electron/dist/main.js",
+    "electron:buildts": "tsc --p electron",
     "electron:package": "electron-forge package",
-    "electron:make": "tsc --p electron && electron-forge make",
+    "electron:make": "electron-forge make",
     "electron:publish": "electron-forge publish"
   },
   "private": true,

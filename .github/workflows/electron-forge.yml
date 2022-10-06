@@ -4,6 +4,8 @@ on: push
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  NOTORIZE_APPLE_ID: ${{secrets.NOTORIZE_APPLE_ID}}
+  NOTORIZE_APPLE_ID_PASSWORD: ${{secrets.NOTORIZE_APPLE_ID_PASSWORD}}
 
 jobs:
   release:
@@ -14,7 +16,8 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        # os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [macos-latest]
 
     steps:
       - name: Check out Git repository
@@ -31,8 +34,8 @@ jobs:
       - name: Build angular frontend
         run: npm run build
 
-      - name: Build electron
-        run: npm run electron:make
+      - name: Build electron typescript
+        run: npm run electron:buildts
 
       - name: Publish electron
         run: npm run electron:publish
