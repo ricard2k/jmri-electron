@@ -54,6 +54,9 @@
   },
   "config": {
     "forge": {
+      "packagerConfig": {
+        "executableName": "mmrc"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
