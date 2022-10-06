@@ -1,5 +1,7 @@
 {
-  "name": "modern-railway-model-control",
+  "name": "modern-model-railways-controler",
+  "productName": "Modern Model Railways Controler",
+  "description": "Control application for model railways",
   "version": "0.0.1",
   "main": "./electron/dist/main.js",
   "scripts": {
@@ -52,6 +54,7 @@
   },
   "config": {
     "forge": {
+      "packagerConfig": {}
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
