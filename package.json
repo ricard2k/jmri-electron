@@ -55,64 +55,6 @@
     "typescript": "~4.6.2"
   },
   "config": {
-    "forge": {
-      "packagerConfig": {
-        "executableName": "mmrc"
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "_comment": "An URL to an ICO file to use as the application icon (displayed in Control Panel > Programs and Features).",
-            "iconUrl": "https://url/to/icon.ico",
-            "_comment1": "The ICO file to use as the icon for the generated Setup.exe",
-            "setupIcon": "./electron/icons/icon.ico"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {
-            "options": {
-              "_comment": "Path to a single image that will act as icon for the application",
-              "icon": "./electron/icons/icon.png"
-            }
-          }
-        },
-        {
-          "name": "@electron-forge/maker-dmg",
-          "config": {
-            "_comment": "Path to the icon to use for the app in the DMG window",
-            "icon": "./electron/icons/icon.icns",
-            "format": "ULFO",
-            "name": "mmrc"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-wix",
-          "config": {
-            "language": 1033,
-            "manufacturer": "Ricardo Peironcely",
-            "appUserModelId": "com.squirrel.mmrc.exe",
-            "exe": "mmrc",
-            "programFilesFolderName": "ModernModelRailwaysControler",
-            "shortcutFolderName": "Modern Model Railways Controler",
-            "name": "mmrc"
-          }
-        }
-      ],
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "ricard2k",
-              "name": "modern-model-railways-controler"
-            },
-            "prerelease": true,
-            "tagPrefix": "v"
-          }
-        }
-      ]
-    }
+    "forge": "./electron/forge.config.js"
   }
 }
