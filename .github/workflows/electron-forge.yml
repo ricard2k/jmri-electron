@@ -27,4 +27,6 @@ jobs:
 
       - name: Build electron
         run: npm run electron:make
+
+      - name: Publish electron
         run: npm run electron:publish
