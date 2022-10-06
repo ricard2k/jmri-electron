@@ -2,10 +2,10 @@ module.exports = {
   packagerConfig: {
     executableName: "mmrc",
     osxSign: {
-      identity: "Developer ID Application: Ricardo Peironcely (92G3X5LFNN)",
+      identity: "Developer ID Application: Ricardo Peironcely - 92G3X5LFNN",
       "hardened-runtime": true,
-      entitlements: "entitlements.plist",
-      "entitlements-inherit": "entitlements.plist",
+      entitlements: "./electron/entitlements.plist",
+      "entitlements-inherit": "./electron/entitlements.plist",
       "signature-flags": "library",
     },
     osxNotarize: {
