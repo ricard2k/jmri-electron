@@ -1,6 +1,8 @@
 module.exports = {
   packagerConfig: {
+    name: "mmrc",
     executableName: "mmrc",
+    appCopyright: "This application is open source. Help us in https://github.com/ricard2k/modern-model-railways-controler",
     osxSign: {
       identity: "Developer ID Application: Ricardo Peironcely (92G3X5LFNN)",
       "hardened-runtime": true,
@@ -36,6 +38,9 @@ module.exports = {
       name: "@electron-forge/maker-squirrel",
       config: {
         name: "mmrc",
+        exe: "mmrc",
+        setupIcon: "./electron/icons/icon.ico",
+        icon: "./electron/icons/icon.ico",
         makeVersionWinStoreCompatible: true,
       }
     },
