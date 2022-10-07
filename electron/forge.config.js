@@ -9,8 +9,10 @@ module.exports = {
       "signature-flags": "library",
     },
     osxNotarize: {
-      appleId: process.env.NOTORIZE_APPLE_ID,
-      appleIdPassword: process.env.NOTORIZE_APPLE_ID_PASSWORD,
+      tool: "notarytool",
+      appleApiKey: process.env.APPLE_NOTARIZE_KEY,
+      appleApiKeyId: process.env.APPLE_NOTARIZE_KEY_ID,
+      appleApiIssuer: process.env.APPLE_NOTARIZE_KEY_ISSUER,
     },
   },
   makers: [
