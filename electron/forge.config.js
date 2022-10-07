@@ -2,7 +2,7 @@ module.exports = {
   packagerConfig: {
     executableName: "mmrc",
     osxSign: {
-      identity: "Developer ID Application: Ricardo Peironcely - 92G3X5LFNN",
+      identity: "Developer ID Application: Ricardo Peironcely (92G3X5LFNN)",
       "hardened-runtime": true,
       entitlements: "./electron/entitlements.plist",
       "entitlements-inherit": "./electron/entitlements.plist",
@@ -18,8 +18,6 @@ module.exports = {
       name: "@electron-forge/maker-deb",
       config: {
         options: {
-          _comment:
-            "Path to a single image that will act as icon for the application",
           icon: "./electron/icons/icon.png",
         },
       },
@@ -27,7 +25,6 @@ module.exports = {
     {
       name: "@electron-forge/maker-dmg",
       config: {
-        _comment: "Path to the icon to use for the app in the DMG window",
         icon: "./electron/icons/icon.icns",
         format: "ULFO",
         name: "mmrc",
