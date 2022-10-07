@@ -19,6 +19,8 @@ jobs:
         # os: [macos-latest, ubuntu-latest, windows-latest]
         os: [macos-latest]
 
+    environment: electron-forge
+
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
