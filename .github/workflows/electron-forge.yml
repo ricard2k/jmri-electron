@@ -4,15 +4,10 @@ on: push
 
 jobs:
   packageMac:
-    runs-on: ${{ matrix.os }}, ${{ matrix.arch }}
+    runs-on: macos-latest
 
     permissions:
       deployments: write
-
-    strategy:
-      matrix:
-        os: [macOS]
-        arch: [x86, ARM64]
 
     environment: electron-forge
 
@@ -84,70 +79,61 @@ jobs:
           security delete-keychain $RUNNER_TEMP/app-signing.keychain-db
           # rm ~/Library/MobileDevice/Provisioning\ Profiles/build_pp.mobileprovision
 
-  # packageLinux:
-  #   runs-on: ${{ matrix.os }}
+  packageLinux:
+    runs-on: ubuntu-latest
 
-  #   permissions:
-  #     deployments: write
+    permissions:
+      deployments: write
 
-  #   strategy:
-  #     matrix:
-  #       # os: [macos-latest, ubuntu-latest, windows-latest]
-  #       os: [ubuntu-latest]
+    environment: electron-forge
 
-  #   environment: electron-forge
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
 
-  #   steps:
-  #     - name: Check out Git repository
-  #       uses: actions/checkout@v2
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.2
 
-  #     - name: Install Node.js, NPM and Yarn
-  #       uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 18.2
+      - name: Install dependencies
+        run: npm install
 
-  #     - name: Install dependencies
-  #       run: npm install
+      - name: Build angular frontend
+        run: npm run build
 
-  #     - name: Build angular frontend
-  #       run: npm run build
+      - name: Build electron typescript
+        run: npm run electron:buildts
 
-  #     - name: Build electron typescript
-  #       run: npm run electron:buildts
+      - name: Publish electron
+        run: npm run electron:publish
 
-  #     - name: Publish electron
-  #       run: npm run electron:publish
+  packageWindows:
+    runs-on: windows-latest
 
-  # packageWindows:
-  #   runs-on: ${{ matrix.os }}
+    permissions:
+      deployments: write
 
-  #   permissions:
-  #     deployments: write
+    environment: electron-forge
 
-  #   strategy:
-  #     matrix:
-  #       os: [windows-latest]
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
 
-  #   environment: electron-forge
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.2
 
-  #   steps:
-  #     - name: Check out Git repository
-  #       uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
 
-  #     - name: Install Node.js, NPM and Yarn
-  #       uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 18.2
+      - name: Build angular frontend
+        run: npm run build
 
-  #     - name: Install dependencies
-  #       run: npm install
+      - name: Build electron typescript
+        run: npm run electron:buildts
 
-  #     - name: Build angular frontend
-  #       run: npm run build
-
-  #     - name: Build electron typescript
-  #       run: npm run electron:buildts
-
-  #     - name: Publish electron
-  #       run: npm run electron:publish
-  # 
+      - name: Publish electron
+        run: npm run electron:publish
+  
