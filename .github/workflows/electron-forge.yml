@@ -39,7 +39,7 @@ jobs:
           # import certificate and provisioning profile from secrets
           echo -n "$APPLE_BUILD_CERTIFICATE_BASE64" | base64 --decode --output $NOTARIZE_CERTIFICATE_PATH
           # echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
-          echo -n "$"APPLE_NOTARIZE_KEY_CONTENT" > $APPLE_NOTARIZE_KEY
+          echo -n "$APPLE_NOTARIZE_KEY_CONTENT" > $APPLE_NOTARIZE_KEY
 
           # create temporary keychain
           security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
@@ -106,6 +106,8 @@ jobs:
         run: npm run electron:buildts
 
       - name: Publish electron
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: npm run electron:publish
 
   packageWindows:
@@ -135,5 +137,7 @@ jobs:
         run: npm run electron:buildts
 
       - name: Publish electron
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: npm run electron:publish
   
