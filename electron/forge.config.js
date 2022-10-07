@@ -44,6 +44,12 @@ module.exports = {
         name: "mmrc",
       },
     },
+    {
+      name: "@electron-forge/maker-squirrel",
+      config: {
+        makeVersionWinStoreCompatible: true,
+      }
+    },
   ],
   publishers: [
     {
