@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [macos-12]
         arch: [x86, ARM64]
 
     environment: electron-forge
