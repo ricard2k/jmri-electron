@@ -71,7 +71,7 @@ jobs:
   #       run: npm run electron:publish
   # 
   packageMac:
-    runs-on: ${{ matrix.os }}, ${{ matrix.arch }}
+    runs-on: [${{ matrix.os }}, ${{ matrix.arch }}]
 
     permissions:
       deployments: write
