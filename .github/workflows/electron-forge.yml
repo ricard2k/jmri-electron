@@ -4,7 +4,7 @@ on: push
 
 jobs:
   packageMac:
-    runs-on: [ ${{ matrix.os }}, ${{ matrix.os }} ]
+    runs-on: ${{ matrix.os }}, ${{ matrix.arch }}
 
     permissions:
       deployments: write
