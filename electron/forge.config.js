@@ -33,20 +33,9 @@ module.exports = {
       },
     },
     {
-      name: "@electron-forge/maker-wix",
-      config: {
-        language: 1033,
-        manufacturer: "Ricardo Peironcely",
-        appUserModelId: "com.squirrel.mmrc.exe",
-        exe: "mmrc",
-        programFilesFolderName: "ModernModelRailwaysControler",
-        shortcutFolderName: "Modern Model Railways Controler",
-        name: "mmrc",
-      },
-    },
-    {
       name: "@electron-forge/maker-squirrel",
       config: {
+        name: "mmrc",
         makeVersionWinStoreCompatible: true,
       }
     },

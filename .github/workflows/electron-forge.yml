@@ -67,7 +67,7 @@ jobs:
           APPLE_NOTARIZE_KEY_ISSUER: ${{secrets.APPLE_NOTARIZE_KEY_ISSUER}}
           KEYCHAIN_PASSWORD: ${{secrets.APPLE_BUILD_CERTIFICATE_PASSWORD}}
         run: |
-          APPLE_NOTARIZE_KEY=$RUNNER_TEMP/notarize_certificate.p8
+          export APPLE_NOTARIZE_KEY=$RUNNER_TEMP/notarize_certificate.p8
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
           npm run electron:publish
 
