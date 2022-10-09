@@ -1,6 +1,11 @@
-name: Build/release
+name: electron-forge
 
 on: push
+
+# Allow one concurrent deployment
+concurrency:
+  group: "electron-forge"
+  cancel-in-progress: true
 
 jobs:
   packageMac:
@@ -78,6 +83,34 @@ jobs:
 
   packageLinux:
     runs-on: ubuntu-latest
+
+    environment: electron-forge
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build angular frontend
+        run: npm run build
+
+      - name: Build electron typescript
+        run: npm run electron:buildts
+
+      - name: Publish electron
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: npm run electron:publish
+        
+  packageLinuxRaspberry:
+    runs-on: [self-hosted, Linux, ARM]
 
     environment: electron-forge
 
