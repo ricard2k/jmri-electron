@@ -1,11 +1,11 @@
 # Page settings
 layout: default
-keywords: Introduction
+keywords: About
 comments: false
 
 # Hero section
-title: Introduction
-description: What is MMRC?
+title: What is MMRC?
+description: A place for beginners.
 
 <!-- # Author box
 author:
@@ -24,7 +24,7 @@ page_nav:
         url: '#'
     next:
         content: Next page
-        url: './1.connections/connections.md'
+        url: './1.connections/connections'
 ---
 # What is mmrc?
 The MMRC project is intended for hobbyist to control their layouth with an update technology application. 

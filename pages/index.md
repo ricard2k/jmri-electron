@@ -14,8 +14,8 @@ buttons:
 
 # Author box
 author:
-    title: Wnat is MMRC?
-    title_url: 'introduction.md'
+    title: What is MMRC?
+    title_url: 'about'
     external_url: false
     description: Control your layouth with an actual technology application.
 
