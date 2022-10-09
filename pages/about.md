@@ -5,8 +5,8 @@ keywords: About
 comments: false
 
 # Hero section
-title: 'What is MMRC?'
-description: 'A place for beginners.'
+title: What is MMRC?
+description: A place for beginners.
 
 <!-- # Author box
 author:
