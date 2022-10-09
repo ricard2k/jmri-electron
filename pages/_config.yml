@@ -1,10 +1,10 @@
 # Theme settings
 doks:
-    baseurl:
+    baseurl: https://mmrc.app/
     color_theme: # Available themes: blue (default), green, purple, red and yellow
     header:
         logo:
-            text: mmrc - Modern Model Railways Control
+            text: Modern Model Railways Control
             image:
         nav:
             - item_name: Item 1
@@ -16,16 +16,16 @@ doks:
     footer:
         content:
             logo:
-                text: mmrc - Modern Model Railways Control
+                text: Modern Model Railways Control
                 image:
             copyright: This project is open source. Help us in https://github.com/ricard2k/mmrc.
         social_list:
-            - network_name: facebook
-              profile_url: '#'
-            - network_name: twitter
-              profile_url: '#'
-            - network_name: instagram
-              profile_url: '#'
+            # - network_name: facebook
+            #   profile_url: '#'
+            # - network_name: twitter
+            #   profile_url: '#'
+            # - network_name: instagram
+            #   profile_url: '#'
             - network_name: youtube
               profile_url: '#'
     google_analytics:
