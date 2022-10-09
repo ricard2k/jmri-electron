@@ -4,8 +4,8 @@ layout: homepage
 keywords:
 
 # Hero section
-title: Project name
-description: Project description
+title: mmrc
+description: Modern Model Railways Control
 buttons:
     - content: Button
       url: '#'
@@ -29,3 +29,13 @@ grid_navigation:
       cta: Read more
       url: '#'
 ---
+# What is mmrc?
+The MMRC project is intended for hobbyist to control their layouth with an update technology application. 
+
+MMRC works on:
+
+- Mac
+- Mac - with native Apple silicon
+- Linux
+- Raspverry Pi
+- Windows
