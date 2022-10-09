@@ -20,7 +20,7 @@ doks:
             logo:
                 text: Modern Model Railways Control
                 image:
-            copyright: This project is open source. Help us in https://github.com/ricard2k/mmrc.
+            copyright: This project is open source. Help us in [github](https://github.com/ricard2k/mmrc)
         social_list:
             # - network_name: facebook
             #   profile_url: '#'
