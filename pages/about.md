@@ -27,7 +27,7 @@ page_nav:
         url: './1.connections/connections'
 ---
 # What is mmrc?
-The MMRC project is intended for hobbyist to control their layouth with an update technology application. 
+The MMRC project is intended for hobbyist to control their layout with an update technology application. 
 
 MMRC works on:
 

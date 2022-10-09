@@ -5,7 +5,7 @@ keywords:
 
 # Hero section
 title: MMRC
-description: Modern Model Railways Control
+description: Modern Model Railroad Control
 buttons:
     - icon: github
       content: See in github
@@ -17,7 +17,7 @@ author:
     title: What is MMRC?
     title_url: 'about'
     external_url: false
-    description: Control your layouth with an actual technology application.
+    description: Control your layouth with the last technology.
 
 # Grid navigation
 grid_navigation:
@@ -25,12 +25,12 @@ grid_navigation:
       excerpt: How to connect with your layouth.
       cta: Read more
       url: '#'
-    - title: Entities
-      excerpt: Manage entities like turnouts, signals, sensors, blocks.
+    - title: Tables
+      excerpt: Manage entities like turnouts, signals, sensors, blocks, paths...
       cta: Read more
       url: '#'
     - title: Automation
-      excerpt: From a minimal dispatch system to a full automated layouth run.
+      excerpt: Start with a minimal dispatch system and reach a full automated running layout.
       cta: Read more
       url: '#'
 ---
