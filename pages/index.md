@@ -9,7 +9,7 @@ description: Modern Model Railways Control
 buttons:
     - icon: github
       content: See in github
-      url: 'https://github.com/ricard2k/mmc'
+      url: 'https://github.com/ricard2k/mmrc'
       external_url: true
 
 # Author box
@@ -21,8 +21,23 @@ author:
 
 # Grid navigation
 grid_navigation:
-    - title: Grid navigation
-      excerpt: Section description
+    - title: Introduction
+      excerpt: Here, the place for beginners.
+      cta: Read more
+      url: '#'
+grid_navigation:
+    - title: Layouth Connection
+      excerpt: How to connect with your layouth
+      cta: Read more
+      url: '#'
+grid_navigation:
+    - title: Entities
+      excerpt: Manage entities like turnouts, signals, sensors, blocks.
+      cta: Read more
+      url: '#'
+grid_navigation:
+    - title: Automation
+      excerpt: From a minimal dispatch system to a full automated layouth run.
       cta: Read more
       url: '#'
 ---
