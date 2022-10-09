@@ -1,6 +1,6 @@
 name: electron-forge
 
-on: push
+on: workflow_dispatch
 
 # Allow one concurrent deployment
 concurrency:
