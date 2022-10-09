@@ -5,8 +5,8 @@ keywords: About
 comments: false
 
 # Hero section
-title: What is MMRC?
-description: A place for beginners.
+title: 'What is MMRC?'
+description: 'A place for beginners.'
 
 <!-- # Author box
 author:
@@ -25,10 +25,9 @@ page_nav:
         url: '#'
     next:
         content: Next page
-        url: './connections'
+        url: '/connections'
 ---
-# What is MMRC?
-The MMRC project is intended for hobbyist to control their layout with an update technology application. 
+The MMRC project is intended for hobbyists to control their layout with tes last technology application. 
 
 MMRC works on:
 

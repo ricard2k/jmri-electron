@@ -8,7 +8,7 @@ title: MMRC
 description: Modern Model Railroad Control
 buttons:
     - icon: github
-      content: See in github
+      content: See us in github
       url: 'https://github.com/ricard2k/mmrc'
       external_url: true
 
