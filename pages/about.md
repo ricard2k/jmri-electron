@@ -8,12 +8,12 @@ comments: false
 title: What is MMRC?
 description: A place for beginners.
 
-<!-- # Author box
+# Author box
 author:
-    title: About Author
-    title_url: '#'
-    external_url: true
-    description: Author description -->
+    title: What is MMRC?
+    title_url: 'about'
+    external_url: false
+    description: Control your layout with the last technology.
 
 # Micro navigation
 micro_nav: true
