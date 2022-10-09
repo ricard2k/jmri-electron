@@ -1,3 +1,4 @@
+---
 # Page settings
 layout: default
 keywords: About
@@ -24,9 +25,9 @@ page_nav:
         url: '#'
     next:
         content: Next page
-        url: './1.connections/connections'
+        url: './connections'
 ---
-# What is mmrc?
+# What is MMRC?
 The MMRC project is intended for hobbyist to control their layout with an update technology application. 
 
 MMRC works on:

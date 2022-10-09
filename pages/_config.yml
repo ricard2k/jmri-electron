@@ -7,14 +7,14 @@ doks:
             text: Modern Model Railroad Control
             image:
         nav:
-            - item_name: Introduction
-              item_url: '#'
-            - item_name: Layouth connection
-              item_url: '#'
-            - item_name: Entities
-              item_url: '#'
+            - item_name: WHAT IS MMRC? 
+              item_url: 'about'
+            - item_name: Layout connection
+              item_url: 'connections'
+            - item_name: Tables
+              item_url: 'tables'
             - item_name: Automation
-              item_url: '#'
+              item_url: 'automation'
     footer:
         content:
             logo:

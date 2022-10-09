@@ -17,12 +17,12 @@ author:
     title: What is MMRC?
     title_url: 'about'
     external_url: false
-    description: Control your layouth with the last technology.
+    description: Control your layout with the last technology.
 
 # Grid navigation
 grid_navigation:
-    - title: Layouth Connection
-      excerpt: How to connect with your layouth.
+    - title: Layout connection
+      excerpt: How to connect with your layout.
       cta: Read more
       url: '#'
     - title: Tables
@@ -34,13 +34,3 @@ grid_navigation:
       cta: Read more
       url: '#'
 ---
-# What is mmrc?
-The MMRC project is intended for hobbyist to control their layouth with an update technology application. 
-
-MMRC works on:
-
-- Mac
-- Mac - with native Apple silicon
-- Linux
-- Raspverry Pi
-- Windows
