@@ -27,7 +27,7 @@ page_nav:
         content: Next page
         url: '/connections'
 ---
-The MMRC project is intended for hobbyists to control their layout with the last technology application. 
+The MMRC project is intended for hobbyists to control their layout with a modern application using the last technology. 
 
 MMRC works on:
 
