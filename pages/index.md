@@ -14,19 +14,15 @@ buttons:
 
 # Author box
 author:
-    title: About MMRC
-    title_url: 'about'
+    title: Wnat is MMRC?
+    title_url: 'introduction.md'
     external_url: false
-    description: Control your layouth with an actual technology application
+    description: Control your layouth with an actual technology application.
 
 # Grid navigation
 grid_navigation:
-    - title: Introduction
-      excerpt: Here, the place for beginners.
-      cta: Read more
-      url: '#'
     - title: Layouth Connection
-      excerpt: How to connect with your layouth
+      excerpt: How to connect with your layouth.
       cta: Read more
       url: '#'
     - title: Entities

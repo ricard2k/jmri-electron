@@ -24,7 +24,7 @@ page_nav:
         url: '#'
     next:
         content: Next page
-        url: './connections/connections.md'
+        url: './1.connections/connections.md'
 ---
 # What is mmrc?
 The MMRC project is intended for hobbyist to control their layouth with an update technology application. 
