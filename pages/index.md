@@ -16,7 +16,7 @@ buttons:
 author:
     title: Help us with a sponsorship
     title_url: 'https://github.com/sponsors/ricard2k'
-    external_url: true
+    external_url: True
     description: The contributions received here will be used to source different railroad control systems to support connectivity with them.
 
 # Grid navigation
@@ -24,7 +24,7 @@ grid_navigation:
     - title: What is MMRC?
       excerpt: Control your layout with the last technology.
       cta: Read more
-      url: 'about/'
+      url: '/about/'
     - title: Layout connection
       excerpt: How to connect with your layout.
       cta: Read more
