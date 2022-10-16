@@ -14,10 +14,10 @@ buttons:
 
 # Author box
 author:
-    title: Help Us with an sponsorship?
+    title: Help us with a sponsorship
     title_url: 'https://github.com/sponsors/ricard2k'
     external_url: true
-    description: The contributions received here will be used to source different railroad control systems to support connectivity with them..
+    description: The contributions received here will be used to source different railroad control systems to support connectivity with them.
 
 # Grid navigation
 grid_navigation:
