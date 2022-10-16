@@ -8,13 +8,13 @@ doks:
             image:
         nav:
             - item_name: WHAT IS MMRC? 
-              item_url: 'about/'
+              item_url: '/about/'
             - item_name: Layout connection
-              item_url: 'connections/'
+              item_url: '/connections/'
             - item_name: Tables
-              item_url: 'tables/'
+              item_url: '/tables/'
             - item_name: Automation
-              item_url: 'automation/'
+              item_url: '/automation/'
     footer:
         content:
             logo:
