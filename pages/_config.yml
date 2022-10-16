@@ -1,6 +1,6 @@
 # Theme settings
 doks:
-    baseurl: https://mmrc.app/
+    baseurl: https://mmrc.app
     color_theme: green # Available themes: blue (default), green, purple, red and yellow
     header:
         logo:
