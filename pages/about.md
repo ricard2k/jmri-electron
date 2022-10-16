@@ -25,7 +25,7 @@ page_nav:
         url: '#'
     next:
         content: Next page
-        url: '/connections'
+        url: 'connections/'
 ---
 The MMRC project is intended for hobbyists to control their layout with a modern application using the last technology. 
 
