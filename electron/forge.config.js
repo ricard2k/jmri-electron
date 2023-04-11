@@ -5,6 +5,7 @@ module.exports = {
     appCopyright: "This application is open source. Help us in https://github.com/ricard2k/modern-model-railways-controler",
     overwrite: "yes",
     appCategoryType: "public.app-category.entertainment",
+    icon: "./electron/icons/mmrc",
     osxSign: {
       identity: "Developer ID Application: Ricardo Peironcely (92G3X5LFNN)",
       "hardened-runtime": true,
@@ -24,14 +25,13 @@ module.exports = {
       name: "@electron-forge/maker-deb",
       config: {
         options: {
-          icon: "./electron/icons/icon.png",
+          icon: "./electron/icons/mmrc.png",
         },
       },
     },
     {
       name: "@electron-forge/maker-dmg",
       config: {
-        icon: "./electron/icons/icon.icns",
         format: "ULFO",
         overwrite: true
       },
@@ -39,8 +39,6 @@ module.exports = {
     {
       name: "@electron-forge/maker-squirrel",
       config: {
-        setupIcon: "./electron/icons/icon.ico",
-        icon: "./electron/icons/icon.ico",
         makeVersionWinStoreCompatible: true,
       }
     },

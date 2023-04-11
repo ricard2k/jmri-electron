@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from "electron";
+import { app, BrowserWindow, ipcMain, Menu } from "electron";
 import * as path from "path";
 import * as url from "url";
 import * as fs from "fs";
@@ -19,7 +19,103 @@ function createWindow() {
   win.webContents.openDevTools();
 }
 
-app.on("ready", createWindow);
+app.whenReady().then(() => {
+  createWindow();
+  createMenu();
+});
+
+function createMenu() {
+  const template: Electron.MenuItemConstructorOptions[] = [
+    {
+      label: 'File',
+      submenu: [
+        {
+          label: 'Open',
+          accelerator: 'CmdOrCtrl+O',
+          click() {
+            console.log('Open clicked');
+          },
+        },
+        {
+          label: 'Save',
+          accelerator: 'CmdOrCtrl+S',
+          click() {
+            console.log('Save clicked');
+          },
+        },
+        { type: 'separator' },
+        {
+          label: 'Quit',
+          accelerator: 'CmdOrCtrl+Q',
+          click() {
+            app.quit();
+          },
+        },
+      ],
+    },
+    {
+      label: 'Edit',
+      submenu: [
+        { role: 'undo' },
+        { role: 'redo' },
+        { type: 'separator' },
+        { role: 'cut' },
+        { role: 'copy' },
+        { role: 'paste' },
+        { role: 'delete' },
+        { type: 'separator' },
+        { role: 'selectAll' },
+      ],
+    },
+    {
+      label: 'Layout connection',
+      submenu: [
+        {
+          label: 'Connect',
+          accelerator: 'AltOrOption+C',
+          click() {
+            console.log('Connect clicked');
+          },
+        },
+        {
+          label: 'Disconnect',
+          accelerator: 'AltOrOption+D',
+          click() {
+            console.log('Disconnect clicked');
+          },
+        },
+        { type: 'separator' },
+        {
+          label: 'Configure connections',
+          click() {
+            console.log('Configure connections clicked');
+          },
+        },
+        { type: 'separator' },
+        {
+          label: 'Connection tools',
+          submenu: [
+            {
+              label: 'MERG CBUS console',
+              click() {
+                console.log('MERG CBUS console clicked');
+              }
+            },
+            {
+              label: 'MERG CBUS node manager',
+              click() {
+                console.log('MERG CBUS node manager');
+              }
+            }
+          ]
+        },
+      ] 
+    }
+  ];
+
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
+}
 
 app.on("activate", () => {
   if (BrowserWindow.getAllWindows().length === 0) {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 import { TurnoutsService, Turnout } from '../turnouts.service';
 import { TurnoutDialogComponent } from '../turnout-dialog/turnout-dialog.component';
