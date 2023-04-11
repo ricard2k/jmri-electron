@@ -1,21 +1,25 @@
-<mat-toolbar>
-  Responsive side navigation
-</mat-toolbar>
-
-<mat-sidenav-container>
-  <mat-sidenav mode="side" opened>
+<mat-sidenav-container class="container">
+  <mat-sidenav mode="side" opened class="menu">
     <mat-nav-list>
-      <mat-list-item>
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      <mat-nav-list>
+        <mat-list-item>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
         </mat-list-item>
         <mat-list-item>
           <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="folder"></mat-icon>
         </mat-list-item>
       </mat-nav-list>
+    </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="content mat-elevation-z8">
-      Main content here!
-    </div>
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+<mat-card class="output" [style.height]="outputHeight">
+  <mat-card-header class="divider" (mousedown)="onOutputMouseDown($event)">
+    <mat-card-title></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- Place your output area here -->
+  </mat-card-content>
+</mat-card>
