@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {MaterialExampleModule} from '../material.module';
+import { MaterialModule } from '../material.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,9 @@ import { LogicalEditorComponent } from './logical-editor/logical-editor.componen
 import { AutomationBrowserComponent } from './automation-browser/automation-browser.component';
 import { EntityBrowserComponent } from './entity-browser/entity-browser.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TurnoutsComponent } from './turnouts/turnouts.component';
+import { HomeComponent } from './home/home.component';
+import { TurnoutDialogComponent } from './turnout-dialog/turnout-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +26,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PanelEditorComponent,
     LogicalEditorComponent,
     AutomationBrowserComponent,
-    EntityBrowserComponent
+    EntityBrowserComponent,
+    TurnoutsComponent,
+    HomeComponent,
+    TurnoutDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialExampleModule
+    MaterialModule,
+    MatDialogModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

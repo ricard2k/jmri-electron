@@ -1,21 +1,14 @@
-<mat-toolbar>
+<mat-toolbar class="app-toolbar">
   Responsive side navigation
 </mat-toolbar>
 
-<mat-sidenav-container>
-  <mat-sidenav mode="side" opened>
-    <mat-nav-list>
-      <mat-list-item>
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="folder"></mat-icon>
-        </mat-list-item>
-      </mat-nav-list>
+<mat-sidenav-container class="app-sidenav-container">
+  <mat-sidenav mode="side" opened class="app-sidenav">
+    <app-left-bar></app-left-bar>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content >
     <div class="content mat-elevation-z8">
-      Main content here!
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

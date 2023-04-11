@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>New Turnout</h2>
+<mat-dialog-content>
+  <form>
+    <mat-form-field>
+      <mat-label>System Name</mat-label>
+      <input matInput [(ngModel)]="turnout.systemName" name="systemName">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>User Name</mat-label>
+      <input matInput [(ngModel)]="turnout.userName" name="userName">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>State</mat-label>
+      <input matInput [(ngModel)]="turnout.state" name="state">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Comment</mat-label>
+      <input matInput [(ngModel)]="turnout.comment" name="comment">
+    </mat-form-field>
+    <br>
+    <mat-checkbox [(ngModel)]="turnout.inverted" name="inverted">Inverted</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="turnout.locked" name="locked">Locked</mat-checkbox>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+</mat-dialog-actions>
