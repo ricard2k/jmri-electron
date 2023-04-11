@@ -1,14 +1,16 @@
-<mat-toolbar class="app-toolbar">
-  Responsive side navigation
-</mat-toolbar>
-
-<mat-sidenav-container class="app-sidenav-container">
-  <mat-sidenav mode="side" opened class="app-sidenav">
+<mat-sidenav-container class="container">
+  <mat-sidenav mode="side" opened class="menu">
     <app-left-bar></app-left-bar>
   </mat-sidenav>
-  <mat-sidenav-content >
-    <div class="content mat-elevation-z8">
-      <router-outlet></router-outlet>
-    </div>
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+<mat-card class="output" [style.height]="outputHeight">
+  <mat-card-header class="divider" (mousedown)="onOutputMouseDown($event)">
+    <mat-card-title></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- Place your output area here -->
+  </mat-card-content>
+</mat-card>
