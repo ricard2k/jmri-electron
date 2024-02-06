@@ -20,7 +20,7 @@ jobs:
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v1
         with:
-          node-version: 18.2
+          node-version: 18.13
 
       - name: Install dependencies
         run: npm install
@@ -93,7 +93,7 @@ jobs:
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v1
         with:
-          node-version: 18.2
+          node-version: 18.13
 
       - name: Install dependencies
         run: npm install
@@ -121,7 +121,7 @@ jobs:
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v1
         with:
-          node-version: 18.2
+          node-version: 18.13
 
       - name: Install dependencies
         run: npm install
@@ -153,7 +153,7 @@ jobs:
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v1
         with:
-          node-version: 18.2
+          node-version: 18.13
 
       - name: Install dependencies
         run: npm install
